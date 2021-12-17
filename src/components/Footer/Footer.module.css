@@ -1,0 +1,9 @@
+.footer {
+  margin-top: 120px;
+  grid-area: f;
+}
+.footer p {
+  display: inline;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

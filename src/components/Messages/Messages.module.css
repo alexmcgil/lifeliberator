@@ -1,0 +1,18 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogItems {
+  padding: 20px;
+}
+
+.messages {
+  padding: 20px;
+}
+
+.active {
+  color: #a30002;
+}
+
+/*# sourceMappingURL=Messages.module.css.map */

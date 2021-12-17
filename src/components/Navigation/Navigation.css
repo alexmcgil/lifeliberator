@@ -1,0 +1,34 @@
+.nav {
+  grid-area: n;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+.nav div {
+  margin-bottom: 7px;
+}
+
+.nav__settings {
+  margin-top: 25px;
+}
+
+.nav__main {
+  background-color: #a30002;
+  text-transform: capitalize;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFF;
+}
+
+div a {
+  color: #a30002;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+a.active {
+  background-color: #a30002;
+  color: #FFF;
+}
+
+/*# sourceMappingURL=Navigation.css.map */

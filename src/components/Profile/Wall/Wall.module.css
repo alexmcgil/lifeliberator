@@ -1,0 +1,10 @@
+.content {
+  grid-area: c;
+  margin-left: 150px;
+}
+
+textarea {
+  width: 40%;
+}
+
+/*# sourceMappingURL=Wall.module.css.map */

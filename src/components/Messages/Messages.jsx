@@ -1,24 +1,29 @@
 import React from "react"
 import s from "./Messages.module.sass"
-import {NavLink} from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem"
+import Message from "./Message/Message"
 
-const Messages = () => {
+const Messages = (props) => {
+
+    let newMessage = React.createRef()
+
+    let sendMessage = () => {
+        let text = newMessage.current.value
+        console.log(text)
+    }
+
     return <main className={s.dialogs}>
-        <div className={s.dialogItems}>
-            <div className={s.dialog}>
-                <NavLink to="/messages/1">Billy</NavLink>
-            </div>
-            <div className={s.dialog + " " + s.active}>
-                <NavLink to="/messages/3">Vera</NavLink>
-            </div>
-            <div className={s.dialog}>
-                <NavLink to="/messages/2">Sasha</NavLink>
-            </div>
+        <div className={s.dialogsItems}>
+
+            {props.store.dialogData.map(item => <DialogItem name={item.name} id={item.id} key={item.id}/>)}
+
         </div>
         <div className={s.messages}>
-            <div className={s.message}>Hello</div>
-            <div className={s.message}>Pidor</div>
-            <div className={s.message}>!</div>
+            {props.store.messagesData.map(item => <Message message={item.message} key={item.id}/>)}
+            <div className="input">
+                <textarea ref={newMessage}></textarea>
+                <button onClick={sendMessage}>Send</button>
+            </div>
         </div>
 
     </main>

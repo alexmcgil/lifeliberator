@@ -10,28 +10,29 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
 
+
 const App = (props) => {
-    console.log(props)
     return (<Router>
             <div className="app-wrapper">
                 <Header/>
                 <Navigation/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<App />} />
-                        <Route path="/profile" element={<Profile/>} />
-                        <Route path="/messages" element={<Messages/>} />
-                        <Route path="/music" element={<Music/>} />
-                        <Route path="/news" element={<News/>} />
-                        <Route path="/settings" element={<Settings/>} />
+                        <Route path="/profile/*" element={<Profile state={props.state} dispatch={props.dispatch}/>} />
+                        <Route path="/messages/*" element={<Messages state={props.state}/>} />
+                        <Route path="/music/*" element={<Music/>} />
+                        <Route path="/news/*" element={<News/>} />
+                        <Route path="/settings/*" element={<Settings/>} />
                         <Route path="*" element={<div>Кожевник, тобою выбрана неверная ссылка</div>} />
                     </Routes>
                 </div>
                 <Footer/>
             </div>
         </Router>
-    )
-        ;
+    );
 }
 
 export default App;
+
+// <Route path="/messages/*" element={<Messages/>} />
+

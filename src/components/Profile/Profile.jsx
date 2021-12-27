@@ -1,14 +1,14 @@
 import React from "react"
 import s from "./Profile.module.sass"
-import Wall from "./Wall/Wall"
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import WallContainer from "./Wall/WallContainer";
 
 
 const Profile = (props) => {
     return <main className={s.content}>
         <ProfileInfo />
         <hr/>
-        <Wall profilePage={props.state.profilePage} dispatch={props.dispatch}/>
+        <WallContainer store={props.store} />
     </main>
 }
 

@@ -11,7 +11,7 @@ const Post = (props) => {
             <span>{props.type}</span>
         </div>
         <div className={s.wall__post_body}>{props.text}</div>
-        <div className="likes">{props.likes}</div>
+        <div className={s.likes}>{props.likes}</div>
     </div>
 }
 

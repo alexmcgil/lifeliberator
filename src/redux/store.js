@@ -1,3 +1,7 @@
+import profileReducer from "./profileReducer";
+import messagesReducer from "./messagesReducer";
+
+
 let store = {
     _callSubscriber() {
     },
@@ -48,14 +52,15 @@ let store = {
                     "message": "Hi"
                 },
                 {
-                    "id": 3,
-                    "message": "Hm"
-                },
-                {
                     "id": 2,
                     "message": "Ignor"
+                },
+                {
+                    "id": 3,
+                    "message": "Hm"
                 }
-            ]
+            ],
+            newMessageText: ""
         }
     },
     subscribe(observer) {
@@ -67,27 +72,14 @@ let store = {
 
 
     dispatch(action) {
-        switch (action.type) {
-            case "ADD-POST":
-                let newPost = {
-                    id: 3,
-                    name: "Somebody",
-                    type: "looling",
-                    img: "https://prod.cloud.rockstargames.com/global/LifeInvader/images/avatars/32x32/drray.jpeg",
-                    text: this._state.profilePage.newPostText,
-                    likesCount: 0
-                }
 
-                this._state.profilePage.postsData.push(newPost)
-                this._state.profilePage.newPostText = ""
-                this._callSubscriber(this._state);
-                break;
-            case "UPDATE-NEW-POST-TEXT":
-                this._state.profilePage.newPostText = action.text;
-                this._callSubscriber(this._state)
-        }
+        profileReducer(this._state.profilePage, action);
+        messagesReducer(this._state.messagesPage, action);
+
+        this._callSubscriber(this._state);
     }
-
 }
+
+
 
 export default store

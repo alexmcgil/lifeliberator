@@ -5,6 +5,32 @@
 
 .wall__post {
   margin: 20px 0;
+  background-color: white;
+  padding: 10px;
+  border-radius: 7px;
 }
 
-/*# sourceMappingURL=Music.module.css.map */
+.likes {
+  text-align: right;
+}
+
+.wall__post_head {
+  display: grid;
+  grid-template-areas: "i h" "s s";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 17fr;
+}
+
+img {
+  grid-area: i;
+}
+
+h3 {
+  grid-area: h;
+}
+
+span {
+  grid-area: s;
+}
+
+/*# sourceMappingURL=Post.module.css.map */
